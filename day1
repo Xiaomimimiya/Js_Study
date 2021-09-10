@@ -54,12 +54,73 @@
                 \b 空格
                 \\ \' \" 斜杠 单引号 双引号
                 
-        5、字符串相关操作
+        ★5、字符串相关操作
                 ①长度：var tem="jwoiq efqjefouq qnfoiqofqq iqfoiqwoinqw";  //39
                                 console.log(tem.length);
                 ①字符串拼接：数值相加，字符相连。
                              console.log(123 + 'xiaomi');  // 字符串的拼接直接用 +  即可；数字可以拼接字符串
                 
+        ★6、获取数据的类型 还可以检测输出的数据类型
+                var age = 10,
+                    name = 'xiaomi';
+                console.log(typeof age); //number
+                console.log(typeof name); //String
                 
+        7、数据类型的转换
+                ①其他类型转换为字符型
+                         var test1 = 10;
+                         alert(test1.toString()); //强制转换
+                         alert(String(test1)); //直接转换
+                         //隐式转换 使用最多的方法
+                         console.log(test1+''); //字符串拼接转换 数值+字符串=字符串类型
+                 ★②其他类型转换为数值型
+                        var test1 = '123';
+                        // 整数
+                        console.log(parseInt(test1));
+                        console.log(parseInt(3.13)); //小数点向下取整 
+                        console.log(parseInt('120px')); //自动去掉px单位 输出120
+                        console.log(parseInt('ew120px')); //输出NaN
+                        
+                        //浮点数 parseFloat其他功能类似parseInt
+                        console.log(parseFloat('3.12')); 
+                        
+                        //Number 既可以整数  又可以浮点数
+                        var test1 = '123';
+                        console.log(Number(test1)); //123
+                        console.log(Number('12.3')); //12.3
+                        
+                        //  * / - 这三个运算符也可以作为数值类的数据转换
+                        
+                        
+                  ★③数值相加
+                         var test1 = prompt('请输入1');
+                         var test2 = prompt('请输入2');
+                         //★★★★注意我们输入的是字符串，需要转换为数值类型的才能进行相加，不然使用'+' 就是字符串拼接
+                         alert(Number(test1)+Number(test2));
+                    
+                    ④布尔型的转换
+                        console.log(Boolean()); // 使用Boolean 函数进行转换
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
                 
                 
