@@ -1,0 +1,65 @@
+一、输入输出语法
+        1、输入
+                <script >
+                    prompt("请输入你的年龄");
+                </script>
+                
+        2、输出 展示给用户
+                <script >
+                    alert("计算的结果是：");
+                </script>
+                
+        3、输出 控制台 测试所用 F12--> console
+                <script >
+                    console.log("测试拿来用的：");
+                </script>      
+                
+二、变量
+        1、声明
+                var name; //声明一个变量 name
+                
+        2、使用变量
+                 var name = prompt("输入姓名：");
+                 alert (name);
+                 
+        3、更新变量
+                //后面对变量进行更新，会覆盖前面的变量，以最后一次的更新为准。
+                
+        4、声明多个变量
+                var name = "xiaomi", age = 14, address = "china";
+                //直接在var 后面添加并在变量后面加英文逗号
+        
+        5、命名规范
+        
+        6、变量值转换
+                apple1 = apple2; //是将apple2的值转换给apple1  
+
+三、数据类型
+        1、类型的确定
+                ①js的变量类型只有在程序在运行的时候，根据等号右边的值来确定的。如二.4
+                ②js是动态语言，变量的数据类型是可以变化的。
+                        var x = 10; //数值
+                            x ="xiaomi"; //变为字符串
+        
+        2、进制的注意
+                0 表示8进制；0x表示16进制
+        
+        3、数据的最大、最小值
+                alert (Number.MAX_VALUE);
+                alert (Number.MIN_VALUE);
+                
+        4、字符串转义
+                \n 换行
+                \t 缩进
+                \b 空格
+                \\ \' \" 斜杠 单引号 双引号
+                
+        5、字符串相关操作
+                ①长度：var tem="jwoiq efqjefouq qnfoiqofqq iqfoiqwoinqw";  //39
+                                console.log(tem.length);
+                ①字符串拼接：数值相加，字符相连。
+                             console.log(123 + 'xiaomi');  // 字符串的拼接直接用 +  即可；数字可以拼接字符串
+                
+                
+                
+                
