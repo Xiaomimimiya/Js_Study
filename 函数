@@ -1,0 +1,29 @@
+小计算器功能
+while (true) {
+            var number1 = prompt("输入数字1"),
+                ways = prompt("输入运算符"),
+                number2 = prompt("输入数字2");
+
+            function sum() {
+
+                switch (ways) {
+                    case "+":
+                        return Number(number1) + Number(number2);
+                        break;
+                    case "-":
+                        return Number(number1) - Number(number2);
+                        break;
+                    case "*":
+                        return Number(number1) * Number(number2);
+                        break;
+                    case "/":
+                        return Number(number1) / Number(number2);
+                        break;
+                    default:
+                        return "输入有误";
+                        break;
+                }
+            }
+            alert("运算结果是" + sum());
+
+        }
