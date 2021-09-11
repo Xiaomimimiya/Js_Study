@@ -1,29 +1,44 @@
-小计算器功能
-while (true) {
-            var number1 = prompt("输入数字1"),
-                ways = prompt("输入运算符"),
-                number2 = prompt("输入数字2");
+★★★★★★★★★★★★小计算器功能★★★★★★★★★★★★
+            while (true) {
+                        var number1 = prompt("输入数字1"),
+                            ways = prompt("输入运算符"),
+                            number2 = prompt("输入数字2");
 
-            function sum() {
+                        function sum() {
 
-                switch (ways) {
-                    case "+":
-                        return Number(number1) + Number(number2);
-                        break;
-                    case "-":
-                        return Number(number1) - Number(number2);
-                        break;
-                    case "*":
-                        return Number(number1) * Number(number2);
-                        break;
-                    case "/":
-                        return Number(number1) / Number(number2);
-                        break;
-                    default:
-                        return "输入有误";
-                        break;
-                }
-            }
-            alert("运算结果是" + sum());
+                            switch (ways) {
+                                case "+":
+                                    return Number(number1) + Number(number2);
+                                    break;
+                                case "-":
+                                    return Number(number1) - Number(number2);
+                                    break;
+                                case "*":
+                                    return Number(number1) * Number(number2);
+                                    break;
+                                case "/":
+                                    return Number(number1) / Number(number2);
+                                    break;
+                                default:
+                                    return "输入有误";
+                                    break;
+                            }
+                        }
+                        alert("运算结果是" + sum());
 
-        }
+                    }
+
+
+★★★★★★★★★★★★求任意数字的最大值★★★★★★★★★★★★
+             function Get_Max(num) {
+                        var temp = arguments[0];
+                        for (let index = 0; index < arguments.length; index++) {
+                            if (arguments[index] > temp) {
+                                temp = arguments[index];
+                            }
+
+                        }
+                        return temp;
+                    }
+
+                    console.log(Get_Max(123, 134, 1234, 2345, 123, 12, 12435, 13245, 99999));
