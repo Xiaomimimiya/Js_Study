@@ -1,0 +1,19 @@
+1、创建对象
+  var person_message = {
+            name: "小米",
+            sex: "男",
+            age: "18",
+            SayHi: function() {
+                console.log("Hello");
+            }
+        }
+        
+2、使用对象某个方法+属性
+    ①person_message.SayHi(); // 方法
+    ②console.log(person_message.sex); //属性
+    ③console.log(person_message['sex']); //属性
+    
+3、函数构造对象
+    
+    
+    
