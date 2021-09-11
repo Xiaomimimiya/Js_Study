@@ -1,0 +1,16 @@
+1、任意数组 使用冒泡算法进行排序 
+        
+        function sort_number(arr) {
+                  for (var i = 0; i < arr.length - 1; i++) { // 比较多少次
+                      for (var j = 0; j < arr.length - i - 1; j++) { // 怎么比较
+                          if (arr[j] > arr[j + 1]) {
+                              var temp = arr[j];
+                              arr[j] = arr[j + 1];
+                              arr[j + 1] = temp;
+                          }
+                      }
+                  }
+                  return arr;
+              }
+              var numbers = sort_number([1, 5, 2, 6, 8, 0, 11]);
+              console.log(numbers);
