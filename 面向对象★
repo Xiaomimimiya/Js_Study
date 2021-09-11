@@ -14,6 +14,24 @@
     ③console.log(person_message['sex']); //属性
     
 3、函数构造对象
-    
-    
+     // 构造函数------> 对象的实例化 
+        // 函数名需要首字母大写
+        //
+        function Singer(username, age, sex) {
+            this.name = username;
+            this.age = age;
+            this.sex = sex;
+            // 不需要return 就可以返回结果
+        }
+        new Singer("1234", 12, "male"); // 调用函数
+
+4、遍历对象的属性    使用 for  in函数的方法
+   var obj = {
+            name: "xiaomi",
+            age: 18,
+            sex: "male"
+        } 
+        for (var key in obj) {    // key 代表属性名 obj[key]代表属性值
+            console.log(obj[key]);
+        }
     
