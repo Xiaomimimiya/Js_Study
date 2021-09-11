@@ -1,0 +1,32 @@
+一、循环
+        1、continue  
+          退出本次循环，但是继续执行剩余次数的循环
+            for (var i = 1; i <= 5; i++) {
+              if (i == 3) {
+                  continue;  // i=3 会跳出本次循环 而去执行第四次
+              }
+              console.log("我正在吃第" + i + "个包子");
+          }
+        2、循环判断例子
+          var money = 100;
+          while (true) {
+              var User_Functions = prompt("请输入你的操作\n1.存钱\n2.取钱\n3.显示余额\n4.退出");
+              switch (Number(User_Functions)) {
+                  case 1:
+                      var input_money = prompt("请输入存入的钱:")
+                      money += Number(input_money);
+                      alert("余额为" + money);
+                      break;
+                  case 2:
+                      var output_money = prompt("请输入取出的钱:")
+                      money -= Number(output_money);
+                      alert("余额为" + money);
+                      break;
+                  case 3:
+                      alert(money);
+                      break;
+              }
+              if (Number(User_Functions) == 4) {
+                  break;
+              }
+          }
