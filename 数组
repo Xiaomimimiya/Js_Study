@@ -1,0 +1,21 @@
+1、创建数组
+  var arr = [1,2,3,4,5,6]
+  
+2、访问数组
+  var arr[2] // 3
+  var arr[6] // undifind
+  
+3、遍历数组    使用for循环即可
+        var money = [1, 2, 3, 4, 5, 6, 7, 8];
+        for (i = 0; i < money.length; i++) {  //i=0 
+            console.log(money[i]);
+          }
+          
+ 4、新增元素
+        var money = [1, 2, 3, 4]
+         // 直接改变长度
+        money.length = 5 // 数组长度直接增到5 但是第五个数组元素为undefiend
+         // 修改索引 直接追加元素 如果存在 则会被替换
+         money[5] = 5 
+         // 如果直接给数组名赋值 则数组元素全部会被覆盖
+         money = "今天"  // 输出 今天
