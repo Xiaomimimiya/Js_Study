@@ -42,3 +42,24 @@
                     }
 
                     console.log(Get_Max(123, 134, 1234, 2345, 123, 12, 12435, 13245, 99999));
+                    
+                    
+★★★★★★★★★★★★函数嵌套★★★★★★★★★★★★                    
+              
+         function backyear() {
+            var input_years = prompt("请输入年份");
+            if (isyears(input_years) == true) {
+                alert("二月29天");
+            } else {
+                alert("二月28天");
+            }
+        }
+        function isyears(years) {
+            var result = true;
+            if (years % 4 == 0 && years % 100 != 0 || years % 400 == 0) {
+                return result;
+            } else {
+                return false;
+            }
+        }
+        backyear();
