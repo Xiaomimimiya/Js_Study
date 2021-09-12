@@ -1,0 +1,136 @@
+1、文档查阅网站
+    https://developer.mozilla.org/zh-CN/
+    
+2、数学对象的封装
+
+-----------------------------------------实例1------------------------------------------
+           var max_min = {
+            max: function() {
+                var max = arguments[0];
+                for (let index = 1; index < arguments.length; index++) {
+                    if (max < arguments[index]) {
+                        max = arguments[index]
+                    }
+                }
+                return max;
+            },
+            min: function() {
+                var min = arguments[0];
+                for (let index = 1; index < arguments.length; index++) {
+                    if (min > arguments[index]) {
+                        min = arguments[index];
+                    }
+                }
+                return min;
+            }
+        }
+        console.log(max_min.min(1, 10, 3, 20, 33, 0, 12, 23));
+        
+3、得到一个两数之间的随机整数
+    function getRandomInt(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min)) + min; //不含最大值，含最小值
+    }
+    
+-----------------------------------------实例2------------------------------------------
+
+4、得到一个两数之间的随机整数，包括两个数在内 
+    function getRandomIntInclusive(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值 
+    }
+    
+-----------------------------------------实例3------------------------------------------
+
+      function getRandom(min, max) {
+              min = Math.ceil(min);
+              max = Math.floor(max);
+              return Math.floor(Math.random() * (max - min)) + min;
+          }
+        var lol = ["wr", "WQraw", "AWrwatrwq", "wqrwqrqwr", "Awrqwrqrw"]
+        console.log(lol[getRandom(0, lol.length-1)]);
+    
+========================================================================================
+
+1、日期函数
+  需要使用new 来进行新建 实例化 和math函数的使用方法有区别
+  
+-----------------------------------------实例4------------------------------------------
+
+  var data = new Date('2021-9-12 10:14:50');  // 字符串的方法最常用
+        console.log(data);   
+        
+-----------------------------------------实例5------------------------------------------
+
+var data = new Date();
+        console.log(data.getFullYear()); // 返回当前年
+        console.log(data.getMonth() + 1); // 返回当前月 需要+1
+        console.log(data.getDate()); // 返回当前日
+        console.log(data.getDay()); // 周一1 周六6  但是周日是0
+        
+-----------------------------------------实例6------------------------------------------
+
+// 返回当前的年月日    --------使用中文
+var data = new Date();
+        var years = data.getFullYear(),
+            months = data.getMonth() + 1,   //  注意月份的+1
+            days = data.getDate(),
+            week_day = data.getDay();
+         // 星期 用数组的索引来进行取值
+        var arr = ["星期日", "星期1", "星期2", "星期3", "星期4", "星期5", "星期6" ]  
+        console.log(years + "年" + months + "月" + days + "日" + arr[week_day]);
+        
+-----------------------------------------实例7------------------------------------------
+
+// 返回当前的时分秒    --------使用中文
+ function getTime() {
+            var data = new Date(),
+                h = data.getHours(),
+                h = h < 10 ? "0" + h : h,    // ★ ★ ★ ★ ★三元判断 ★ ★ ★ ★ ★
+                m = data.getMinutes(),
+                m = m < 10 ? "0" + m : m,
+                s = data.getSeconds(),
+                s = s < 10 ? "0" + s : s;
+            return h + "时" + m + "分" + s + "秒"
+        }
+        console.log(getTime());
+
+-----------------------------------------实例8------------------------------------------
+
+// 获取时间戳
+        var data = +new Date();
+        console.log(data);
+        console.log(Date.now());
+
+-----------------------------------------实例9------------------------------------------
+
+//倒计时
+ function CountTime(time) {
+            var now_time = +new Date(); // 返回当前的时间的时间戳
+            var input_time = +new Date(time); // 返回输入时间的时间戳
+            var times = (input_time - now_time) / 1000; // 算出时间戳
+            var d = parseInt(times / 60 / 60 / 24), //天
+                d = d < 10 ? "0" + d : d;
+            var h = parseInt(times / 60 / 60 % 24), //时
+                h = h < 10 ? "0" + h : h;
+            var m = parseInt(times / 60 % 60), // 分
+                m = m < 10 ? "0" + m : m;
+            var s = parseInt(times % 60), // 秒
+                s = s < 10 ? "0" + s : s;
+            return d + "天" + h + "时" + m + "分" + s + "秒"
+        }
+        console.log(CountTime("2021-9-12 12:00:00"));
+
+
+
+
+
+
+
+
+
+    
+    
+    
