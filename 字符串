@@ -33,10 +33,50 @@
             }
          Unique_Number('wqegqwretgweqwdqwxc');
          
+===================================统计次数出现最多的字符===============================================
+
+          // 统计次数出现最多的字符 
+        str = "wqqqqwwwwwqqqwwwwqqqwwwwqqqwww";
+        var o = {
+
+
+        }
+        for (i = 0; i <= str.length; i++) {
+            var number = str.charAt(i);
+            if (o[number]) {
+                o[number]++;
+            } else {
+                o[number] = 1;
+            }
+        }
+        var max = 0,
+            chars = "";
+        for (var keys in o) {
+            if (o[keys] > max) {
+                max = o[keys];
+                chars = keys;
+            }
+        }
+        console.log(max);
+        console.log(chars);
+        
 ====================================实例=========================================
 
          // 返回字符的 ASCII 值
         str = "12454234322";
         console.log(str.charCodeAt(2)); // 52
         
-        
+====================================实例=========================================
+     replace ---------------->替换字符串
+     split-------------------->分割字符串，字符串转换为数组
+     join---------------------> 拼接字符串，数组转换为字符串
+     contact------------------> 拼接字符串  等同于+
+     substr(start, length) ------------------> 截取字符串 （开始，长度）
+     
+
+
+
+
+
+
+
