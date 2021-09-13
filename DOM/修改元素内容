@@ -1,4 +1,4 @@
-1、通过添加事件 来修改元素里面的文本 -------------------> ★★★★★★★innerText()方法 
+1、通过添加事件 来修改元素里面的文本 -------------------> ★★★★★★★innerText()方法 但是推荐使用innerHTML方法 
 
 =============================实例1 添加点击事件===============================
 
@@ -22,11 +22,31 @@
               div.innerText = date;
           </script>
     
-    
-    
-    
-    
-    
+2、innerText和innerHTML的区别在于
+
+    innerText不能识别html的标签，比如说给字体加粗的<strong> </strong>  但是能够去除空格和换行
+    innerHTML能够识别html标签，在对元素做出修改时 可以选择    但是保留空格和换行
+==========================>  推荐使用innerHTML
+
+3、修改元素属性的图片标签
+==========================================修改元素属性之图片=====================================
+    <button id="ldh">刘德华</button>
+    <button id="zxy">张学友</button>
+    <img src="js1.jpg" alt="" title="刘德华">
+    <script>
+        var ldh = document.getElementById("ldh"),
+            zxy = document.getElementById("zxy"),
+            image = document.querySelector("img");
+        ldh.onclick = function() {
+            image.src = "js1.jpg";
+            image.title = "刘德华";
+        }
+        zxy.onclick = function() {
+            image.src = "js2.jpg";
+            image.title = "张学友"
+        }
+    </script>
+-------------------------->修改什么属性 就取得属性 然后将其进行修改
     
     
     
