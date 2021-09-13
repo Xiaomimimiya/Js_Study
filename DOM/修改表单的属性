@@ -1,0 +1,26 @@
+ 1、修改表单里的值
+ ========================实例1=============================
+      <button>点我一下</button>
+        <input type="text" value="请输入内容">
+        <script>
+            var btn = document.querySelector("button"),
+                input = document.querySelector("input");
+            btn.onclick = function() {
+                // 修改的是表单中value的值
+                input.value = "被点击了"; //直接修改value的值即可
+            }
+        </script>
+        
+2、 表单禁用的方法
+        // 如果想要表单被禁用 则使用以下两种方法 结果都是一样的
+            btn.disabled = true;
+            // this 指向的是函数事件的调用者 即btn
+            this.disabled = true;
+        
+        
+        
+        
+        
+        
+        
+        
