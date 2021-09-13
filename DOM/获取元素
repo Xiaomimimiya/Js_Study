@@ -34,7 +34,10 @@
     </script>
         
         
-        
+3、获取body和Html元素
+
+      var body_Element = document.body;  //直接获取到body
+      var html_Element = document.documentElement;  //直接获取到html所有的元素
         
         
         
