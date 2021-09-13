@@ -1,0 +1,53 @@
+1、通过获取ID 的方法来得到元素  -------------------> getElementById方法  返回的是一个对象object
+      <div id="time"> Hello world</div>
+          <script>
+              var id = document.getElementById("time");
+              console.log(id);
+          </script>
+          
+==============================================> console.dir(id); 可以打印我们返回的元素对象 查看元素里面的属性和方法
+ 
+2、根据 标签名 来获取元素      ----------------------> 可以使用for循环来进行遍历
+==============================================方法一：直接获取=================================
+       <ul>
+              <li>1234</li>
+              <li>1234</li>
+              <li>1234</li>
+              <li>1234</li>
+              <li>1234</li>
+          </ul>
+          <script>
+              var id = document.getElementsByTagName("li");   // 参数需要是字符串
+              console.log(id);
+          </script>
+============================================方法2：通过得到父元素来获取他下面的子元素=================================
+    <ul id="time">
+        <li>12341</li>
+        <li>1234</li>
+        <li>1234</li>
+        <li>1234</li>
+        <li>1234</li>
+    </ul>
+    <script>
+        var id = document.getElementById("time");  // 还是通过ID  父元素要能够唯一进行确定
+        console.log(id.getElementsByTagName("li"));
+    </script>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
