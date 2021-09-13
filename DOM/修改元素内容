@@ -1,0 +1,36 @@
+1、通过添加事件 来修改元素里面的文本 -------------------> ★★★★★★★innerText()方法 
+
+=============================实例1 添加点击事件===============================
+
+     <button>点一下就会发生改变</button>
+    <div>当前时间</div>
+    <script>
+        var bnt = document.querySelector("button"),
+            div = document.querySelector("div");
+        bnt.onclick = function() {
+            var date = new Date();     // 可以通过封装date函数的方法来进行
+            div.innerText = date;
+        }
+    </script>
+    
+=============================实例2 自动修改 不需要添加事件============================
+          <div>当前时间</div>
+          <script>
+              var bnt = document.querySelector("button"),
+                  div = document.querySelector("div");
+              var date = new Date();
+              div.innerText = date;
+          </script>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
