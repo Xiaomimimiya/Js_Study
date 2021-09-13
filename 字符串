@@ -1,1 +1,42 @@
+1、根据字符串返回位置
+======================================实例之字符串查找========================================= 
+//  主要使用 indexOf的方法来查找下标位置
 
+     function Unique_Number(numbers) {
+                var count = 0,
+                    index = numbers.indexOf('123'),
+                    arr = [];
+                while (index !== -1) {
+                    arr.push(index);
+                    index = numbers.indexOf('123', index + 1);  //index+1  步骤比较重要
+                    count++;
+                }
+                console.log(arr);
+                console.log(count);
+            }
+            Unique_Number(["res", "res", "res", "123", "123"]); //2    [4,5]
+
+2、根据位置返回字符串 --------------------> charAt方法
+
+======================================实例======================================
+
+        str = "12454234322";
+        console.log(str.charAt(2)); // 4
+                  ========================> 这个方法等同于 str[2]   //4   这种会更加简单
+        
+====================================实例=========================================
+
+        function Unique_Number(numbers) {
+                for (var i = 0; i < numbers.length; i++) {
+                    console.log(numbers.charAt(i));
+                }
+            }
+         Unique_Number('wqegqwretgweqwdqwxc');
+         
+====================================实例=========================================
+
+         // 返回字符的 ASCII 值
+        str = "12454234322";
+        console.log(str.charCodeAt(2)); // 52
+        
+        
