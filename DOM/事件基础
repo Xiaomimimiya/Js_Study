@@ -1,0 +1,27 @@
+ 1、★★★★★★★★★★★事件的基本三要素：事件源、事件类型和事件处理程序★★★★★★★★★★★★★★★
+ 
+ ===================================实例1=========================================
+    <body>
+        <button id="btn">点我一下好吗？</button>
+        <script>
+            // 事件源 就是谁被事件触发 id = btn
+            var id = document.getElementById("btn");
+            // 事件类型 事件触发后被拿来干什么 ---->鼠标点击 onclick
+            // 事件进行处理程序 通过函数的方法 来进行
+            id.onclick = function() {
+                alert("你点了我一下");
+            }
+        </script>
+    </body>
+
+=================================实例2==============================================
+
+  <body>
+    <div>点我一下呗</div>
+    <script>
+        var div = document.querySelector("div");
+        div.onclick = function() {
+            console.log("你再点一点吧");
+        }
+    </script>
+  </body>
