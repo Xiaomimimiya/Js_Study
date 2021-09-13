@@ -29,24 +29,50 @@
 ==========================>  推荐使用innerHTML
 
 3、修改元素属性的图片标签
-==========================================修改元素属性之图片=====================================
-    <button id="ldh">刘德华</button>
-    <button id="zxy">张学友</button>
-    <img src="js1.jpg" alt="" title="刘德华">
-    <script>
-        var ldh = document.getElementById("ldh"),
-            zxy = document.getElementById("zxy"),
-            image = document.querySelector("img");
-        ldh.onclick = function() {
-            image.src = "js1.jpg";
-            image.title = "刘德华";
-        }
-        zxy.onclick = function() {
-            image.src = "js2.jpg";
-            image.title = "张学友"
-        }
-    </script>
+
+==========================================修改元素属性之图片1=====================================
+
+         <button id="ldh">刘德华</button>
+         <button id="zxy">张学友</button>
+         <img src="js1.jpg" alt="" title="刘德华">
+         <script>
+             var ldh = document.getElementById("ldh"),
+                 zxy = document.getElementById("zxy"),
+                 image = document.querySelector("img");
+             ldh.onclick = function() {
+                 image.src = "js1.jpg";
+                 image.title = "刘德华";
+             }
+             zxy.onclick = function() {
+                 image.src = "js2.jpg";
+                 image.title = "张学友"
+             }
+         </script>
 -------------------------->修改什么属性 就取得属性 然后将其进行修改
+
+==========================================修改元素属性之图片2=====================================
+
+     <div id="text">上午好</div>
+         <img src="js1.jpg" alt="">
+         <script>
+             var image = document.querySelector("img");
+             htmls = document.getElementById("text");
+             var date = new Date(),
+                 h = date.getHours();
+             console.log(h);
+             if (h < 12) {
+                 image.src = "js1.jpg";
+                 htmls.innerHTML = "上午好";
+
+             } else if (h < 18) {
+                 image.src = "js2.jpg";
+                 htmls.innerHTML = "下午好";
+
+             } else {
+                 image.src = "js3.jpg";
+                 htmls.innerHTML = "晚上好";
+             }
+         </script>
     
     
     
