@@ -1,0 +1,62 @@
+1、显示和隐藏输入框的内容
+    <html>
+    <meta charset="utf-8">
+    <title>Document</title>
+    <style>
+        input {
+            color: red;
+            outline-color: pink;
+        }
+    </style>
+
+    <body>
+        <div>
+            <input type="text" value="请输入密码" class="ipt">
+        </div>
+        <script>
+            var ipt = document.querySelector(".ipt");
+            ipt.onfocus = function() {
+                if (ipt.value === "请输入密码")
+                    ipt.value = " ";
+
+            }
+            ipt.onblur = function() {
+                if (ipt.value == " ") {
+                    ipt.value = "请输入密码";
+                }
+
+            }
+        </script>
+    </body>
+
+    </html>
+    
+2、显示和隐藏输入框的内
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
