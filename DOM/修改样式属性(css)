@@ -20,7 +20,20 @@
                     }
                 </script>
             </body>
+====================修改body 背景颜色====================
 
+ <script>
+        var Turn_On = document.querySelector(".turn_on"),
+            Turn_Off = document.querySelector(".turn_off");
+
+        Turn_On.onclick = function() {
+            document.body.style.background = "white";   // 修改全屏的背景色
+        }
+        Turn_Off.onclick = function() {
+            document.body.style.background = "black";
+        }
+    </script>
+    
 ======================================================================================
 2、图片关闭与显示
 
