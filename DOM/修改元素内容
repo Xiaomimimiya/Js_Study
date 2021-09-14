@@ -74,8 +74,56 @@
              }
          </script>
     
+================================实例之密码明文和密文转换============================================
+    <html>
+<meta charset="utf-8">
+<title>Document</title>
+<style>
+    .box {
+        position: relative;
+        width: 400px;
+        border: 1px solid #ccc;
+    }
     
+    .box input {
+        width: 370px;
+        height: 30px;
+        border: 0;
+        outline: none;
+    }
     
+    .box img {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 24px;
+    }
+</style>
+
+<body>
+    <div class="box">
+        <label for="">
+            <img src="js1.jpg" alt="" id = "eye">
+        </label>
+        <input type="password" name="" id="pwd">
+    </div>
+    <script>
+        var eye = document.getElementById("eye"),
+            pwd = document.getElementById("pwd");
+        var flag = 0;
+        eye.onclick = function() {
+            if (flag == 0) {
+                pwd.type = "text";
+                eye.src = "js2.jpg";
+                flag = 1;
+            } else {
+                pwd.type = "password";
+                eye.src = "js1.jpg";
+                flag = 0;
+            }
+        }
+    </script>
+</body>
     
     
     
