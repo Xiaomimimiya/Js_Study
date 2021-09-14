@@ -124,7 +124,45 @@
                         </body>
                         </html>
 
+===============================================密码判断======================================
+6、密码判断
+            <html>
+            <meta charset="utf-8">
+            <title>Document</title>
+            <style>
+                div {
+                    width: 100px;
+                    margin: 100px auto;
+                }
 
+                .wrong {
+                    color: red;
+                }
+
+                .right {
+                    color: blue;
+                }
+            </style>
+
+            <body>
+                <div class="register">
+                    <input type="password" class="ipt">
+                    <p class="message">请输入六位数密码</p>
+                </div>
+                <script>
+                    var ipt = document.querySelector(".ipt"),
+                        messages = document.querySelector(".message");
+                    ipt.onblur = function() {
+                        if (this.value.length < 6 || this.value.length > 16) {
+                            messages.className = "message wrong";
+                            messages.innerHTML = "输入错误";
+                        } else {
+                            messages.className = "message right";
+                            messages.innerHTML = "你输入正确";
+                        }
+                    }
+                </script>
+            </body>
 
 
 
