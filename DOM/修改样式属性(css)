@@ -1,0 +1,45 @@
+1、修改背景色
+            <html>
+            <meta charset="utf-8">
+            <title>Document</title>
+            <style>
+                div {
+                    width: 400px;
+                    height: 400px;
+                    background-color: red;
+                }
+            </style>
+
+            <body>
+                <div></div>
+                <script>
+                    var style = document.querySelector("div");
+                    style.onclick = function() {
+                        this.style.backgroundColor = "black";
+                        this.style.width = "600px";
+                    }
+                </script>
+            </body>
+            
+2、图片关闭与显示
+
+        <html>
+        <meta charset="utf-8">
+        <title>Document</title>
+        <style>
+
+        </style>
+
+        <body>
+            <div class="box">
+                <img src="js1.jpg">
+                <i class="Close_btn">×</i>
+            </div>
+            <script>
+                var btn = document.querySelector(".Class_btn"), // 取类 即class 需要 加. .Class_btn
+                    box = document.querySelector(".box"); // .box
+                btn.onclick = function() {
+                    box.style.display = "none";
+                }
+            </script>
+        </body>
