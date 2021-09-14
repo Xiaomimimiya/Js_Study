@@ -20,7 +20,8 @@
                     }
                 </script>
             </body>
-            
+
+======================================================================================
 2、图片关闭与显示
 
         <html>
@@ -43,3 +44,87 @@
                 }
             </script>
         </body>
+=================================================================================
+3、遍历图片
+资源案例网站：   https://www.bilibili.com/video/BV1Sy4y1C7ha?p=211&spm_id_from=pageDriver
+<script>
+        var lis = document.querySelectorAll("li");
+        for (var i = 0; i < lis.length; i++) {
+            var index = i * 44;
+            lis[i].style.backgroundPosition = '0 -' + index + 'px';
+        }
+    </script>
+==================================================================================
+
+4、显示/隐藏文本框里的内容
+                        <html>
+                        <meta charset="utf-8">
+                        <title>Document</title>
+                        <style>
+                            input {
+                                color: #999;
+                            }
+                        </style>
+                        
+                        <body>
+                            <input type="text" value="手机">
+
+                            <script>
+                                var texts = document.querySelector("input");
+                                texts.onfocus = function() {
+                                    if (texts.value === "手机") {
+                                        texts.value = "";
+                                    }
+                                    texts.style.color = "black";
+                                }
+                                texts.onblur = function() {
+                                    if (texts.value == "") {
+                                        texts.value = "手机";
+                                    }
+                                    texts.style.color = "#999";
+                                }
+                            </script>
+                        </body>
+                       </html>
+                       
+=================================================================================
+
+5、★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+====================================批量修改元素样式内容==============================================================
+
+                        <html>
+                        <meta charset="utf-8">
+                        <title>Document</title>
+                        <style>
+                            div {
+                                background-color: blue;
+                                width: 100px;
+                                height: 100px;
+                            }
+
+                            .change {
+                                background-color: rebeccapurple;
+                                width: 200px;
+                                height: 200px;
+                            }
+                        </style>
+
+                        <body>
+                            <div class="first">文字</div>
+                            <script>
+                                var text = document.querySelector("div")
+                                text.onclick = function() {
+                                    // 步骤过于繁琐 针对与大量的需求 可以批量进行修改
+                                    // text.style.width = "200px";
+                                    // text.style.height = "200px";
+                                    // text.style.backgroundColor = "red";
+                                    text.className = "first change"; // 将div 的类名进行修改 且不会改变原先的类名
+                                }
+                            </script>
+                        </body>
+                        </html>
+
+
+
+
+
