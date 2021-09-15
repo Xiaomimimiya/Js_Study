@@ -1,0 +1,33 @@
+<html>
+<meta charset="utf-8">
+<title>Document</title>
+<style>
+    button {
+        background-color: black;
+    }
+</style>
+
+<body>
+    <div>
+        <button>开灯</button>
+        <button>关灯</button>
+        <button>开灯</button>
+        <button>关灯</button>
+        <button>开灯</button>
+        <button>关灯</button>
+    </div>
+    <script>
+        var btn = document.querySelectorAll("button");
+        for (var i = 0; i < btn.length; i++) {
+            btn[i].onclick = function() {
+                for (let index = 0; index < btn.length; index++) {
+                    btn[index].style.backgroundColor = "";
+
+                }
+                this.style.backgroundColor = "pink";
+            }
+        }
+    </script>
+</body>
+
+</html>
