@@ -1,5 +1,7 @@
 1、定义自定义属性 ===================setAttribute()
-
+   ============> 统一命名  data-  
+                       =====> data-index
+                          =====>div.setAttribute("data-index", 111);
  <script>
         var div = document.querySelector("div");
         // 使用getAttribute()可以获得 标签里的自定义属性 例如index
