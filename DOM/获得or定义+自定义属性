@@ -1,0 +1,31 @@
+1、定义自定义属性 ===================setAttribute()
+
+ <script>
+        var div = document.querySelector("div");
+        // 使用getAttribute()可以获得 标签里的自定义属性 例如index
+        console.log(div.getAttribute("index")); // 123
+        div.setAttribute("index", 111);
+    </script>
+
+2、获得自定义属性  ===================getAttribute()
+
+<html>
+<meta charset="utf-8">
+<title>Document</title>
+<style></style>
+
+<body>
+    <div id="div" index="123"></div>
+
+    <script>
+        var div = document.querySelector("div");
+        // 使用getAttribute()可以获得 标签里的自定义属性 例如index
+        console.log(div.getAttribute("index")); // 123
+    </script>
+</body>
+
+</html>
+
+
+
+2、删除自定义属性  ===================removeAttribute()
