@@ -1,0 +1,16 @@
+<html>
+<meta charset="utf-8">
+<title>Document</title>
+<style></style>
+
+<body>
+    <div id="div" index="123"></div>
+
+    <script>
+        var div = document.querySelector("div");
+        // 使用getAttribute()可以获得 标签里的自定义属性 例如index
+        console.log(div.getAttribute("index")); // 123
+    </script>
+</body>
+
+</html>
