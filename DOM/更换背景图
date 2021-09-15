@@ -1,0 +1,30 @@
+1、更换背景图
+<html>
+<meta charset="utf-8">
+<title>Document</title>
+<style>
+    img {
+        width: 200px;
+        height: 200px;
+    }
+</style>
+
+<body>
+    <ul class="baidu">
+        <li><img src="js1.jpg"></li>
+        <li><img src="js2.jpg"></li>
+        <li><img src="js3.jpg"></li>
+    </ul>
+    <script>
+        var body_img = document.querySelector(".baidu").querySelectorAll("img");
+        for (let index = 0; index < body_img.length; index++) {
+        //核心步骤
+            body_img[index].onclick = function() {
+                document.body.style.backgroundImage = 'url(' + this.src + ')';
+            }
+        }
+    </script>
+</body>
+
+</html>
+
