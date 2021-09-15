@@ -1,5 +1,5 @@
 1、定义自定义属性 ===================setAttribute()
-   ============> 统一命名  data-  
+   ============> 统一命名 以  data-  
                        =====> data-index
                           =====>div.setAttribute("data-index", 111);
  <script>
