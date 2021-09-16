@@ -1,0 +1,30 @@
+==================>addEventListener方法  ("事件"，函数)
+<body>
+
+    <button>开灯</button>
+    <button>关灯</button>
+
+    <script>
+        var btn = document.querySelectorAll("button");
+        btn[1].addEventListener('click', function() {
+            alert("你点击了第二个button");
+        })
+    </script>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
