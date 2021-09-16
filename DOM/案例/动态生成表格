@@ -1,0 +1,81 @@
+<html>
+<meta charset="utf-8">
+<title>Document</title>
+<style>
+    table {
+        width: 500px;
+        margin: 100px auto;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    
+    td,
+    th {
+        border: 1px solid #333;
+    }
+    
+    thead tr {
+        height: 40px;
+        background-color: #ccc;
+    }
+</style>
+</head>
+
+<body>
+    <table cellspacing="0">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>科目</th>
+                <th>成绩</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <script>
+        var data = [{
+                name: "mi",
+                subect: "javascript",
+                score: 100
+            }, {
+                name: "xiao",
+                subject: "javascript",
+                score: 99
+            }, {
+                name: "xiaos",
+                subject: "javascript",
+                score: 80
+            }]
+            // 创建行
+        var tbody = document.querySelector("tbody");
+        // 创建几行取决于人数 人数来自于列表的长度
+        for (let index = 0; index < data.length; index++) {
+            var tr = document.createElement("tr");
+            tbody.appendChild(tr);
+            // 创建列 多少列 取决于数组里面的属性
+            for (const key in data[index]) {
+                var td = document.createElement("td");
+                // 把对象里面的属性值 给td 
+                // data[index][key]能够获取到属性值
+                td.innerHTML = data[index][key];
+                tr.appendChild(td);
+            }
+            //创建操作行的内容
+            var td = document.createElement("td");
+            td.innerHTML = "<a href = 'javascript:;'>删除</a>";
+            tr.appendChild(td);
+        }
+        var a_delete = document.querySelectorAll("a");
+        for (let index = 0; index < a_delete.length; index++) {
+            a_delete[index].onclick = function() {
+                tbody.removeChild(this.parentNode.parentNode);
+            }
+        }
+    </script>
+</body>
+
+</html>
