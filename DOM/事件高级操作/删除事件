@@ -1,0 +1,18 @@
+ ========================> removeEventListener()方法
+<script>
+        var btn = document.querySelectorAll("button");
+
+        // 传统模式
+        btn[0].onclick = function() {
+                alert("33");
+                btn[0].onclick = null;
+            }
+        // 事件删除模式
+        btn[1].addEventListener('click', fu);
+        // 不能使用匿名函数的写法来进行
+        function fu() {
+            alert("22");
+            // removeEventListener(事件，事件处理)
+            btn[1].removeEventListener("click", fu);
+        }
+    </script>
