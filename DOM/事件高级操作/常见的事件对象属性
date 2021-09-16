@@ -1,0 +1,57 @@
+1、触发事件的对象查看 ========> event.target
+  <body>
+      <div>123</div>
+      <script>
+          var div = document.querySelector("div");
+          // 传统方法
+          div.onclick = function(event) {
+
+              console.log(event.target);
+          }
+          // 新方法
+          // event.target主要是查看触发事件的对象是哪个===>div
+          div.addEventListener("click", function(event) {
+              console.log(event.target);
+              // <div>123</div>
+          })
+      </script>
+  </body>
+  
+2、返回事件的类型=========>event.type
+    <body>
+        <div>123</div>
+        <script>
+            var div = document.querySelector("div");
+
+            // 新方法
+            // event.target主要是查看触发事件的对象是哪个===>div
+            div.addEventListener("click", fn);
+            div.addEventListener("mouseover", fn);
+            div.addEventListener("mouseout", fn);
+
+            function fn(event) {
+                console.log(event.type);
+            }
+        </script>
+    </body>
+
+3、阻止默认行为
+    <body>
+        <div>123</div>
+        <a href="www.baidu.com">百度</a>
+        <form>
+            <input type="submit" value="提交" name="sub">
+        </form>
+        <script>
+            var a_click = document.querySelector("a");
+            // 阻止默认行为 即网页不跳转 提交按钮不执行
+            a_click.addEventListener("click", function(event) {
+                event.preventDefault(); // 标准写法
+            })
+        </script>
+    </body>
+  
+  
+  
+  
+  
