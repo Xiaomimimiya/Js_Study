@@ -15,24 +15,35 @@
 
 <body>
     <textarea id="message" cols="30" rows="10"></textarea>
-    <a></a>
-    <button>发布</button>
+
+    <button id="appends">发布</button>
+
     <ul>
     </ul>
     <script>
-        var btn = document.querySelector("button"),
+        var appends = document.getElementById("appends"),
             text = document.getElementById("message"),
-            ul = document.querySelector("ul"),
-            date = new Date();
+            ul = document.querySelector("ul");
+        appends.onclick = function() {
 
-        btn.onclick = function() {
-            if (message.value == "") {
-                alert("没有输入内容");
+            if (text.value == 0) {
+                alert("请输入内容");
                 return false;
             } else {
+                // 添加留言
                 var li = document.createElement("li");
-                li.innerHTML = text.value;
+                // 直接使用字符串拼接的方法来增加删除链接
+                li.innerHTML = text.value + "<a href='javascript:;'>删除</a>";
                 ul.insertBefore(li, ul.children[0]);
+            }
+            // 删除留言
+            var a_delete = document.querySelectorAll("a");
+            for (let index = 0; index < a_delete.length; index++) {
+                a_delete[index].onclick = function() {
+                    // 删除的是a的父节点
+                    ul.removeChild(this.parentNode);
+                }
+
             }
         }
     </script>
