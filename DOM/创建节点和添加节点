@@ -1,0 +1,19 @@
+<body>
+    <ul>
+        <li>123</li>
+    </ul>
+
+    <script>
+        // 1先创建节点 ============> creatElement
+        var li = document.createElement('li');
+
+        // 2.把创建的节点添加进去 ===============> appendChild
+        var ul = document.querySelector('ul');
+        ul.appendChild(li);
+
+        // 添加到指定位置
+        var li_two = document.createElement("li");
+        // 添加什么 到什么位置之前
+        ul.insertBefore(li_two, ul.children[0]);
+    </script>
+</body>
