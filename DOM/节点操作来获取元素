@@ -1,0 +1,59 @@
+1、父节点
+  =======================
+  <body>
+    <div class="box">
+        <span class="code">x</span>
+    </div>
+    <script>
+        // 以前的写法去获得div的节点内容
+        var code = document.querySelector('.code');
+        var box = document.querySelector(".box");
+        
+        //  现在的写法 去获取div的内容 返回的是离他最近的父节点
+        var parent_select = code.parentNode;
+    </script>
+</body>
+
+2、子节点
+ <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+    <script>
+        // 以前的写法去获得ul下面的li节点内容
+        var code = document.querySelector('ul');
+        var box = code.querySelector("li");
+
+        // 现在利用父子节点来获取 使用childNodes
+        var ul = document.querySelector('ul'),
+            li = ul.childNodes;
+        console.log(li);
+    </script>
+
+3、获得第一个或者是最后一个节点元素的方法===========> firstElementchild  和 lastElementchild
+  <ol>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ol>
+    <script>
+        var ul = document.querySelector('ol');
+        console.log(ul.firstElementChild);
+        console.log(ul.lastElementChild)
+    </script>
+
+
+
+
+
+
+
+
+
