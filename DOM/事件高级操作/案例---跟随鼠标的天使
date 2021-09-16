@@ -1,0 +1,23 @@
+<style>
+    img {
+        height: 80px;
+        width: 80px;
+        position: absolute;
+    }
+</style>
+
+<body>
+    <img src="js1.jpg" alt="">
+    <script>
+        var picture = document.querySelector("img");
+        // 鼠标移动事件 mousemove
+        document.addEventListener("mousemove", function(event) {
+            var x = event.pageX,
+                y = event.pageY;
+            // 注意加上单位px的问题
+            // -40 使得鼠标位于中间
+            picture.style.left = x - 40 + "px";
+            picture.style.top = y - 40 + "px";
+        })
+    </script>
+</body>
