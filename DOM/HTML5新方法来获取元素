@@ -39,28 +39,5 @@
     </script>
 </body>
       
-3、返回指定选择器的所有对象 -------------->querySelector 只能选择第一个元素对象     
-
-   <body>
-    <div class="box">盒子</div>
-    <div class="box">盒子</div>
-    <div id="nav">
-        <ul>
-            <li>首页</li>
-            <li>产品</li>
-        </ul>
-    </div>
-    <script>
-        /* 返回制定的第一个元素的对象
-                    ★.box 类需要加 .     #nav  id需要加#  */
-        var box = document.querySelectorAll(".box");
-        console.log(box);
-        var nav = document.querySelectorAll("#nav");
-        console.log(nav);
-        var li = document.querySelectorAll("li");
-        console.log(li);
-    </script>
-</body>     
-        
-        
+ 
         
