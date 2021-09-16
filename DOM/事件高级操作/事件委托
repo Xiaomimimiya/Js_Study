@@ -1,0 +1,21 @@
+
+<body>
+    <ul>
+        <li>1234356</li>
+        <li>1234356</li>
+        <li>1234356</li>
+        <li>1234356</li>
+        <li>1234356</li>
+        <li>1234356</li>
+    </ul>
+    <script>
+        let ul = document.querySelector("ul");
+        // 事件委托的核心原理 不需要去取得li节点的值
+        // 不需要给每个子节点进行赋予事件 而是给委托给他们的父节点
+        ul.addEventListener("click", function(event) {
+            //alert("1234");
+            //增加功能 更改背景色  借助于event的功能
+            event.target.style.backgroundColor = "pink";
+        })
+    </script>
+</body>
