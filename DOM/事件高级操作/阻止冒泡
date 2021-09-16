@@ -1,0 +1,1 @@
+直接使用 evet.stoPropagation()就可以进行冒泡的阻止
