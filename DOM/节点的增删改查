@@ -43,4 +43,19 @@
         }
     </script>
 
-3、复制节点
+3、复制节点 ======>cloneNode
+    <body>
+
+        <ul>
+            <li>11</li>
+            <li>22</li>
+            <li>33</li>
+            <li>44</li>
+        </ul>
+
+        <script>
+            var ul = document.querySelector("ul");
+            var copy = ul.children[0].cloneNode(true);
+            ul.appendChild(copy);
+        </script>
+    </body>
