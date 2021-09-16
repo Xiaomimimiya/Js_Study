@@ -23,4 +23,22 @@
 
 
 
-2、删除
+2、删除    ===================>removeChild 方法
+   <button id="append">删除</button>
+    <ul>
+        <li>123</li>
+        <li>1234</li>
+        <li>1235</li>
+        <li>1236</li>
+    </ul>
+    <script>
+        var appends = document.getElementById("append"),
+            ul = document.querySelector("ul");
+        appends.onclick = function() {
+            if (ul.children.length == 0) {
+                this.disabled = true;
+            } else {
+                ul.removeChild(ul.children[0]);
+            }
+        }
+    </script>
