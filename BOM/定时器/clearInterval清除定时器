@@ -1,0 +1,18 @@
+<body>
+    <button class="begin">开始</button>
+    <button class="stop">结束</button>
+    <script>
+        var begin = document.querySelector(".begin"),
+            stop = document.querySelector(".stop");
+        var times = null;
+        begin.addEventListener("click", function() {
+            times = setInterval(function() {
+                console.log("你好");
+            }, 1000)
+        })
+        stop.addEventListener("click", function() {
+            clearInterval(times);
+        })
+    </script>
+
+</body>
