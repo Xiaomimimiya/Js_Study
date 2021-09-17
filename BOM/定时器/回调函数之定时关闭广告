@@ -1,0 +1,12 @@
+ 
+<body>
+    <img src="js1.jpg" alt="" class="ad">
+    <script>
+        var img = document.querySelector(".ad");
+        setTimeout(function() {
+            // 图片隐藏
+            img.style.display = "none";
+        }, 5000)
+    </script>
+
+</body>
