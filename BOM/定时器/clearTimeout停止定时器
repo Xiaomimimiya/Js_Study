@@ -1,0 +1,14 @@
+<body>
+    <button>点击我就停止</button>
+    <script>
+        var button = document.querySelector("button");
+        var times = setTimeout(function() {
+            alert("爆炸了");
+        }, 2000)
+        button.addEventListener("click", function() {
+            clearTimeout(times);
+            alert("停止爆炸");
+        })
+    </script>
+
+</body>
