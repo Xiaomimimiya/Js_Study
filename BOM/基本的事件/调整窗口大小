@@ -1,0 +1,36 @@
+<html>
+<meta charset="utf-8">
+<title>Document</title>
+<html>
+<meta charset="utf-8">
+<title>Document</title>
+<style>
+    div {
+        width: 500;
+        height: 300;
+        background-color: pink;
+    }
+</style>
+</head>
+<body>
+
+    <script>
+        // 因为div 标签写在script下面 可以用load 进行加载 才能够进行style的设置
+        window.addEventListener("load", function() {
+            // 响应式布局
+            // resize
+            let div = document.querySelector("div");
+            window.addEventListener("resize", function() {
+                // 获得屏幕的宽度 ====> innerWidth
+                if (window.innerWidth < 400) {
+                    div.style.display = "none";
+                } else {
+                    div.style.display = "block";
+                }
+
+            })
+        })
+    </script>
+    <div></div>
+</body>
+</html>
