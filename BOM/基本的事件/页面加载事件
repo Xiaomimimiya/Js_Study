@@ -1,0 +1,16 @@
+   <script>
+        var p_icon = document.querySelector("button");
+        p_icon.addEventListener("click", function() {
+            alert("点击我");
+        })
+
+        window.addEventListener("load", function() {
+            alert("111");
+        })
+
+        window.addEventListener("DOMcontentLoaded", function() {
+                alert("222");
+            })
+            // load是等页面全部加载完毕后 再进行弹出 例如图片 flash css等
+            // DOMcontentLoaded则是等DOM加载完毕 不需要等图片 css flash 等执行完毕 速度比load要快很多
+    </script>
