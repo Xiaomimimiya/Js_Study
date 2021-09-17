@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button> 按钮 </button>
+    <div></div>
+
+    <script>
+        let btn = document.querySelector('button');
+        div = document.querySelector("div");
+        btn.addEventListener('click', function() {
+            location.href = 'https://www.jd.com'
+        })
+        let time = 3;
+        setInterval(function() {
+            if (time == 0) {
+                location.href = 'https://www.jd.com';
+            } else {
+                div.innerHTML = "剩余" + time + "秒";
+                time--;
+            }
+        }, 1000)
+    </script>
+</body>
+
+</html>
