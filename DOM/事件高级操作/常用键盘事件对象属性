@@ -1,0 +1,18 @@
+1、获得用户在键盘中输入的值
+<body>
+    <script>
+        // 键盘属性对象keycode 可以得到相应键的Ascii的值
+        //keyup和keydown不区分大小写
+        // keypress 区分大小写
+        document.addEventListener("keyup", function(event) {
+            console.log(event.keyCode);
+        })
+        document.addEventListener("keydown", function(event) {
+            console.log(event.keyCode);
+        })
+        // 不能识别功能键
+        document.addEventListener("keypress", function(event) {
+            console.log(event.keyCode);
+        })
+    </script>
+</body>
