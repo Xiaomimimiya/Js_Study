@@ -1,0 +1,12 @@
+<body>
+    <input type="text">
+    <script>
+        var search = document.querySelector("input");
+        document.addEventListener("keyup", function(event) {
+        // 利用用户输入的键盘值来判断 和移动光标
+            if (event.keyCode == 83) {
+                search.focus();
+            }
+        })
+    </script>
+</body>
