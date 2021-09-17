@@ -20,6 +20,7 @@
             // 响应式布局
             // resize
             let div = document.querySelector("div");
+            // resize是在屏幕大小发生变化时 就会执行相关的代码程序
             window.addEventListener("resize", function() {
                 // 获得屏幕的宽度 ====> innerWidth
                 if (window.innerWidth < 400) {
