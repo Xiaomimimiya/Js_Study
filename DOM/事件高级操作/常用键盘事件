@@ -1,0 +1,15 @@
+<body>
+    <script>
+        document.addEventListener("keyup", function() {
+            console.log(("键盘弹起"));
+        })
+        document.addEventListener("keydown", function() {
+            console.log(("键盘按下"));
+        })
+        // 不能识别功能键
+        document.addEventListener("keypress", function() {
+            console.log(("键盘按住"));
+        })
+    </script>
+</body>
+// 执行顺序====down press up
