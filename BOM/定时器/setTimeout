@@ -1,0 +1,20 @@
+<body>
+
+    <script>
+        // ======> window.setTimeout(调用函数，调用时间(毫秒1000ms=1s)) 
+        // window 可以省略 
+        // 可以直接调用函数，也可以在内部写函数
+        setTimeout(function() {
+                alert("内部书写函数"), 1000
+            })
+            // 针对于页面中多个计时器，我们经常使用标识符来进行标识
+        function callback() {
+            alert("外部调用函数输出");
+        }
+        // 可以直接调用函数，也可以在内部写函数
+        // 针对于页面中多个计时器，我们经常使用标识符来进行标识
+        let time1 = setTimeout(callback, 1000);
+        let time2 = setTimeout(callback, 2000);
+    </script>
+
+</body>
