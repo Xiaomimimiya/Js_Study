@@ -1,1 +1,81 @@
+<html>
+<meta charset="utf-8">
+<title>Document</title>
 
+<html>
+<meta charset="utf-8">
+<title>Document</title>
+<style>
+    body>div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    
+    form {
+        width: max-content;
+    }
+    
+    .big-title {
+        width: 100%;
+        position: relative;
+        background-color: teal;
+        margin-bottom: 10px;
+        display: none;
+    }
+    
+    .big-title::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 20px;
+        height: 20px;
+        background-color: teal;
+        transform: translateX(-50%) rotate(45deg);
+        z-index: -1;
+    }
+    
+    #input-msg {
+        outline: none;
+    }
+</style>
+</head>
+
+<body>
+    <div class="search">
+        <form>
+            <div class="big-title"></div>
+            <input id="input-msg" type="text" placeholder="请输入您的快递单号">
+        </form>
+    </div>
+    <script>
+        let big_title = document.querySelector(".big-title");
+        let jd_input = document.querySelector("#input-msg");
+        // keyup 输入的时候 内容就落入到文本框了 
+        // press 和down 则不行
+        jd_input.addEventListener("keyup", function(event) {
+            if (event.keyCode !== "") {
+                big_title.innerText = jd_input.value;
+                big_title.style.display = "block";
+
+            } else {
+                big_title.style.display = "none";
+            }
+        })
+
+        // 失去焦点 隐藏文本框
+        jd_input.addEventListener("blur", function() {
+                big_title.style.display = "none";
+            })
+            //获得焦点 显示文本框
+        jd_input.addEventListener("focus", function() {
+            if (this.valer !== "") {
+                big_title.style.display = "block";
+            }
+        })
+    </script>
+</body>
+
+</html>
