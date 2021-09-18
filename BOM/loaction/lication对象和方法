@@ -1,0 +1,12 @@
+  <script>
+        document.addEventListener("click", function() {
+            // 记录浏览历史 可以实现后退功能 ====>页面跳转
+            location.assign("http://www.baidu.com");
+
+            //不能记录历史 不能实现后退功能 ====>页面跳转
+            location.replace("http://www.baidu.com");
+
+            // 重新加载 加ture参数 会强制刷新
+            location.reload()
+        })
+    </script>
