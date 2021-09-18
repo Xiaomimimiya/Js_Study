@@ -1,0 +1,66 @@
+===========================offsetLeft和offsetTop=======================================
+===========================> 元素的偏移
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    
+    .father {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        background-color: black;
+        margin: 100px;
+    }
+    
+    .son {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+        margin-left: 40px;
+    }
+</style>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <script>
+        var father = document.querySelector(".father");
+        var son = document.querySelector(".son");
+        console.log(father.offsetTop);
+        // 如果没有加定位 其距离相当于到body(页面边框)的位置 
+        // 加定位 需要在father css 中加 position: relative;
+        console.log(son.offsetLeft);
+    </script>
+</body>
+
+</html>
+
+
+
+===========================offsetWidth和offsetHeight=======================================
+===========================> 元素的大小 包含padding border width
+
+console.log(son.offsetWidth);
+console.log(son.offsetHeight);
+
+ // 返回带有定位父亲节点 否则返回body
+        console.log(son.offsetParent);
+        //返回的是最近一级的父亲 不管是否有定位
+        console.log(son.parentNode);
+
+
+
+
+
