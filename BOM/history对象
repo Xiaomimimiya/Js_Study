@@ -1,0 +1,30 @@
+====================>Js_Study.html 页面
+<body>
+    <a href="index.html">点击</a>
+    <button>前进到index.html</button>
+    <script>
+        var button = document.querySelector("button");
+        button.addEventListener("click", function() {
+            // 两个函数的功能类似 前进一步
+            history.forward();
+            History.go(1);
+        })
+    </script>
+</body>
+
+
+
+
+====================>index.html 页面
+<body>
+    <a href="Js_Study.html">点击</a>
+    <button>后退到Js_Study.html</button>
+    <script>
+        var button = document.querySelector("button");
+        button.addEventListener("click", function() {
+            // 两个函数的功能类似 后退一步
+            history.back();
+            history.go(-1);
+        })
+    </script>
+</body>
