@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    
+    .box {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        background-color: lightcoral;
+        margin: 100px;
+    }
+</style>
+
+<body>
+    <div class="box"> </div>
+    <script>
+        var box = document.querySelector(".box");
+        box.addEventListener("click", function(event) {
+            var x1 = event.pageX;
+            var y1 = event.pageY;
+            var x2 = box.offsetTop;
+            var y2 = box.offsetLeft;
+            var offset_top = y1 - y2,
+                offset_left = x1 - x2;
+            console.log(offset_top);
+            console.log(offset_left);
+        })
+    </script>
+</body>
+
+</html>
