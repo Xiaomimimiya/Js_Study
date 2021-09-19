@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+        border: 10px solid red;
+    }
+</style>
+
+<body>
+    <div class="test"></div>
+    <script>
+        var div = document.querySelector(".test");
+        // clinet返回的页面狂的距离 不包括边框
+        // offset 包括边框长度
+        console.log(div.clientWidth); //200 
+        console.log(div.clientHeight); //200
+        // 获得边框
+        console.log(div.clientTop); //10
+    </script>
+</body>
+
+</html>
