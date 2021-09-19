@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .slider-bar {
+        position: absolute;
+        left: 50%;
+        top: 300px;
+        margin-left: 600px;
+        width: 45px;
+        height: 130px;
+        background-color: pink;
+    }
+    
+    .w {
+        width: 1200px;
+        margin: 10px auto;
+    }
+    
+    .header {
+        height: 150px;
+        background-color: #ccc;
+    }
+    
+    .banner {
+        height: 250px;
+        background-color: green;
+    }
+    
+    .main {
+        height: 2000px;
+        background-color: teal;
+    }
+    
+    span {
+        display: none;
+        position: absolute;
+        bottom: 0;
+    }
+</style>
+
+<body>
+    <div class="slider-bar">
+        <span class="go-back">返回顶部</span>
+    </div>
+    <div class="header w">头部区域</div>
+    <div class="banner w">banner区域</div>
+    <div class="main w">主体部分</div>
+    <script>
+        var slider_bar = document.querySelector(".slider-bar");
+        var banner = document.querySelector(".banner");
+        // 被卷去的头部大小
+        var banner_Top = banner.offsetTop;
+        // 设置滚动栏固定的距离
+        var sliderbar_top = slider_bar.offsetTop - banner_Top;
+        // 获取主体元素
+        var main = document.querySelector(".main");
+        var go_back = document.querySelector(".go-back");
+        // 获取主体的距离
+        var main_top = main.offsetTop;
+        // 页面滚动
+        document.addEventListener("scroll", function() {
+            // 获得页面头部被卷去的长度
+            // 当我们被卷去头部位置大于slider_bar的高度 就需要改变侧边栏(slider-bar)为固定定位
+            if (window.pageYOffset >= banner_Top) {
+                slider_bar.style.position = "fixed";
+                slider_bar.style.top = sliderbar_top + "px";
+            } else {
+                slider_bar.style.position = "absolute";
+                slider_bar.style.top = "300px";
+            }
+            // 页面滚动到main 盒子 主体部分就出现or隐藏
+            if (window.pageYOffset >= main_top) {
+                go_back.style.display = "block";
+            } else {
+                go_back.style.display = "none";
+            }
+        })
+    </script>
+</body>
+
+</html>
