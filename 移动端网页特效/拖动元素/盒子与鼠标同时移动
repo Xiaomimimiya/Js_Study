@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            background-color: teal;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+
+    </div>
+    <script>
+        var div = document.querySelector("div");
+        // 鼠标位置
+        var startX = 0,
+            startY = 0;
+        // div盒子的位置
+        var box_X = 0,
+            box_Y = 0;
+        div.addEventListener("touchstart", function(event) {
+            // 获得鼠标移动时的初始坐标
+            startX = event.targetTouches[0].pageX;
+            startY = event.targetTouches[0].pageY;
+            // 获得盒子的位置
+            box_X = this.offsetLeft;
+            box_Y = this.offsetTop;
+            // 计算鼠标的移动距离
+        });
+        div.addEventListener("touchmove", function(event) {
+            // 计算手指的移动距离 =手指移动后的距离-手指初始的距离
+            var move_X = event.targetTouches[0].pageX - startX;
+            var move_Y = event.targetTouches[0].pageY - startY;
+            // 移动盒子
+            this.style.left = box_X + move_X + "px";
+            this.style.top = box_Y + move_Y + "px";
+            // 阻止屏幕滚动的默认行为
+            event.defaultPrevented();
+        });
+    </script>
+</body>
+
+</html>
