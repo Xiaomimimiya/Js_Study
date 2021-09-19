@@ -1,0 +1,91 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        body {
+            background: rgba(0, 0, 0, 0.8);
+        }
+        
+        div {
+            position: relative;
+            width: 700px;
+            height: 42px;
+            margin: 100px auto;
+            border-radius: 5px;
+            background: url("PHPNO1/js1.jpg") no-repeat right #fff;
+        }
+        
+        ul {
+            list-style: none;
+            position: relative;
+        }
+        
+        li {
+            float: left;
+            width: 83px;
+            height: 42px;
+            font: 400 16px/42px "simsun";
+            text-align: center;
+            cursor: pointer;
+        }
+        
+        span {
+            position: absolute;
+            width: 83px;
+            height: 42px;
+            left: 0;
+            background: url("js1.jpg") no-repeat;
+        }
+    </style>
+</head>
+<script src="animate.js"></script>
+<script>
+    window.addEventListener("load", function() {
+        // 获取元素
+        var cloud = document.querySelector(".cloud");
+        var c_nav = document.querySelector(".c-nav");
+        var lis = c_nav.querySelectorAll("li");
+        // 作为起始位置
+        var current = 0;
+        // 给li绑定事件
+        for (let index = 0; index < lis.length; index++) {
+            // 鼠标经过 把当前小li作为目标值
+            lis[index].addEventListener("mouseenter", function() {
+                animate(cloud, this.offsetLeft)
+            });
+            // 鼠标离开 则回到起点
+            lis[index].addEventListener("mouseleave", function() {
+                animate(cloud, current);
+            });
+            // 鼠标点击 就将其作为目标值
+            lis[index].addEventListener("click", function() {
+                current = this.offsetLeft;
+            });
+        }
+    })
+</script>
+
+<body>
+    <div id="c-nav" class="c-nav">
+        <span class="cloud"></span>
+        <ul>
+            <li>首页新闻</li>
+            <li>活动策划</li>
+            <li>师资力量</li>
+            <li>企业文化</li>
+            <li>招聘信息</li>
+            <li>公司简介</li>
+            <li>上海校区</li>
+            <li>广州校区</li>
+        </ul>
+    </div>
+</body>
+
+</html>
