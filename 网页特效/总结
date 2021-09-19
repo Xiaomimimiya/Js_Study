@@ -1,3 +1,7 @@
-element.offsetWidth 返回自身 包括padding、边框、内容区的宽度 返回数值没有单位
-element.clientWidth 返回自身 包括padding、内容区的宽度，不含边框 返回数值没有单位
+ element.offsetWidth 返回自身 包括padding、边框、内容区的宽度 返回数值没有单位
+  ============>获得元素位置
+        element.clientWidth 返回自身 包括padding、内容区的宽度，不含边框 返回数值没有单位
+  =============> 获得元素大小
 element.scrollWidth 返回自身实际的宽度 不含边框 返回数值不带单位
+  =============> 获得元素滚动距离
+  ========================>页面滚动距离 使用window.pageXOffset来获得
