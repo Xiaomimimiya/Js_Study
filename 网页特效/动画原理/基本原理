@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        position: absolute;
+        left: 0;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+</style>
+
+<body>
+    <div></div>
+    <script>
+        var div = document.querySelector("div");
+        var timer = setInterval(function() {
+            if (div.offsetLeft > 400) {
+                // 移动到指定位置后停止
+                clearInterval(timer);
+            } else {
+                // 每次移动的距离是left在不断的变化
+                // 获取是offsetLeft 赋值是style.left
+                div.style.left = div.offsetLeft + 5 + "px";
+            }
+        }, 30); // 移动事件
+    </script>
+</body>
+
+</html>
