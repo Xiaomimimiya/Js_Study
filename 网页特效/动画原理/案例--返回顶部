@@ -1,1 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .slider-bar {
+        position: absolute;
+        left: 50%;
+        top: 300px;
+        margin-left: 600px;
+        width: 45px;
+        height: 130px;
+        background-color: pink;
+    }
+    
+    .w {
+        width: 1200px;
+        margin: 10px auto;
+    }
+    
+    .header {
+        height: 150px;
+        background-color: #ccc;
+    }
+    
+    .banner {
+        height: 250px;
+        background-color: green;
+    }
+    
+    .main {
+        height: 2000px;
+        background-color: teal;
+    }
+    
+    span {
+        display: none;
+        position: absolute;
+        bottom: 0;
+    }
+</style>
+
+<body>
+    <div class="slider-bar">
+        <span class="go-back">返回顶部</span>
+    </div>
+    <div class="header w">头部区域</div>
+    <div class="banner w">banner区域</div>
+    <div class="main w">主体部分</div>
+    <script>
+        var slider_bar = document.querySelector(".slider-bar");
+        var banner = document.querySelector(".banner");
+        // 被卷去的头部大小
+        var banner_Top = banner.offsetTop;
+        // 设置滚动栏固定的距离
+        var sliderbar_top = slider_bar.offsetTop - banner_Top;
+        // 获取主体元素
+        var main = document.querySelector(".main");
+        var go_back = document.querySelector(".go-back");
+        // 获取主体的距离
+        var main_top = main.offsetTop;
+        // 页面滚动
+        document.addEventListener("scroll", function() {
+            // 获得页面头部被卷去的长度
+            // 当我们被卷去头部位置大于slider_bar的高度 就需要改变侧边栏(slider-bar)为固定定位
+            if (window.pageYOffset >= banner_Top) {
+                slider_bar.style.position = "fixed";
+                slider_bar.style.top = sliderbar_top + "px";
+            } else {
+                slider_bar.style.position = "absolute";
+                slider_bar.style.top = "300px";
+            }
+            // 页面滚动到main 盒子 主体部分就出现or隐藏
+            if (window.pageYOffset >= main_top) {
+                go_back.style.display = "block";
+            } else {
+                go_back.style.display = "none";
+            }
+        })
+
+        // 点击返回顶部 我们就使得窗口滚动到最上方 window.scrollk
+        go_back.addEventListener("click", function() {
+            // 直接滚动到最上方
+            // window.scroll(0, 0); // 不需要加单位
+            //加动画 去滚动 使用封装的动画函数
+            animate(window, 0, callback);
+        })
+
+        function animate(obj, target, callback) {
+            // bug 在于不断的点击button  元素的移动速度就越快 
+            //======> 解决办法在于每执行一次 就使用定时器去清除之前的定时器
+            // 只保留执行时的一个定时器
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function() {
+                //移动速度= (目标值-现在的位置)/10
+                // 页面上下滚动了多少 主要通过window.pageYOffset
+                var step = (target - window.pageYOffset) / 10;
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                if (window.pageYOffset == target) {
+                    // 移动到指定位置后停止
+                    clearInterval(obj.timer);
+                    // 回调函数写在清楚定时器结束之后
+                    if (callback) {
+                        callback();
+                    }
+                } else {
+                    // 每次移动的距离是left在不断的变化
+                    //+5这个值改为动态变化的 
+                    // 缓动运动 ==>移动速度= (目标值-现在的位置)/10
+                    // 匀速运动 ==> 现在的值+固定值
+                    // obj.style.left = window.pageYOffset + step + "px";
+                    window.scroll(0, window.pageYOffset + step)
+                }
+            }, 15); // 移动事件
+        }
+    </script>
+</body>
+
+</html>
