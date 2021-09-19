@@ -1,0 +1,70 @@
+======> 每次移动的距离不一样 变小或者变大
+======> 核心算法 移动速度= (目标值-现在的位置)/10
+===================>核心代码<=============================
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        position: absolute;
+        left: 0;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+    
+    span {
+        position: absolute;
+        display: block;
+        left: 0;
+        top: 200px;
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+    }
+</style>
+
+<body>
+    <button>点击我就开始运行下面的方框</button>
+    <div>上面的</div>
+    <span>下面的</span>
+    <script>
+        // 简单函数封装:obj 目标对象 target:目标位置
+        // 给不同的元素指定了不同的定时器 ===> obj.timer
+        function animate(obj, target) {
+            // bug 在于不断的点击button  元素的移动速度就越快 
+            //======> 解决办法在于每执行一次 就使用定时器去清除之前的定时器
+            // 只保留执行时的一个定时器
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function() {
+                //移动速度= (目标值-现在的位置)/10
+                // 需要取整数 向上取整
+                var step = Math.ceil((target - obj.offsetLeft) / 10);
+                if (obj.offsetLeft == target) {
+                    // 移动到指定位置后停止
+                    clearInterval(obj.timer);
+                } else {
+                    // 每次移动的距离是left在不断的变化
+                    //+5这个值改为动态变化的 
+                    // 缓动运动 ==>移动速度= (目标值-现在的位置)/10
+                    // 匀速运动 ==> 现在的值+固定值
+                    obj.style.left = obj.offsetLeft + step + "px";
+                }
+            }, 15); // 移动事件
+        }
+        var div = document.querySelector("div");
+        animate(div, 300);
+        var span = document.querySelector("span");
+        var button = document.querySelector("button");
+        button.addEventListener("click", function() {
+            animate(span, 500);
+        })
+    </script>
+</body>
+
+</html>
