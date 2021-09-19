@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        position: absolute;
+        left: 0;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+    
+    span {
+        position: absolute;
+        display: block;
+        left: 0;
+        top:200px;
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+    }
+</style>
+
+<body>
+    <div></div>
+    <span></span>
+    <script>
+    //==================================================> 动画 一定要注意在css里添加定位 =====>position: absolute;
+        // 简单函数封装:obj 目标对象 target:目标位置
+        function animate(obj, target) {
+            var timer = setInterval(function() {
+                if (obj.offsetLeft > target) {
+                    // 移动到指定位置后停止
+                    clearInterval(timer);
+                } else {
+                    // 每次移动的距离是left在不断的变化
+                    obj.style.left = obj.offsetLeft + 5 + "px";
+                }
+            }, 30); // 移动事件
+        }
+
+        // 获取元素
+        var div = document.querySelector("div");
+        // 调用函数
+        animate(div, 300);
+        // 获取元素
+        var span = document.querySelector("span");
+        // 调用函数
+        animate(span, 200);
+    </script>
+</body>
+
+</html>
