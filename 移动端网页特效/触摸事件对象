@@ -1,5 +1,12 @@
 常见事件对象
 e.touches 正在触摸屏幕的所有手指列表   手指离开后，该事件对象为空
+
+
 e.targetTouches 正在触摸当前DOM元素的手指列表(开发中常用)   手指离开后，该事件对象为空
+==========> 侦听一个DOM元素 他们两个是一样的
+=========> 屏幕离开了 就没有touches和targetTouches列表 但是会有changedTouches
+=========> 最常用的是 targetTouches  因为一般都是触摸元素
+
 
 e.changedTouches 手指状态发生了改变，从无到有，从有到无
+=========> 屏幕离开了 就无
