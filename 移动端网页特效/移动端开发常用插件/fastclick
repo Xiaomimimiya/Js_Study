@@ -12,7 +12,9 @@
 </head>
 
 <body>
-    <div></div>
+    <div>
+    https://github.com/ftlabs/fastclick
+    </div>
     <script>
         if ('addEventListener' in document) {
             document.addEventListener('DOMContentLoaded', function() {
