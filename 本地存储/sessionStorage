@@ -1,0 +1,56 @@
+特点：
+  1、数据存储在浏览器
+  2、设置、读取方便、页面刷新不会丢失数据
+  3、容量较大，但是存储字符串
+  4、生命周期是关闭浏览器
+  5、同一页面下可以实现数据共享
+  6、以键值对来存储
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <input type="text">
+    <button class="set">存储数据</button>
+    <button class="get">获取数据</button>
+    <button class="remove">删除数据</button>
+    <button class="delete">清除所有数据</button>
+    <script>
+        var input = document.querySelector("input");
+        var set = document.querySelector(".set");
+        var get = document.querySelector(".get");
+        var remove = document.querySelector(".remove");
+        var deletes = document.querySelector(".delete");
+        set.addEventListener("click", function() {
+            //存储数据
+            var val = input.value;
+            sessionStorage.setItem("uname0", val);
+            sessionStorage.setItem("uname1", val);
+        });
+        get.addEventListener("click", function() {
+            // 点击 获取数据
+            var text = sessionStorage.getItem("uname0");
+            console.log(text);
+        });
+        remove.addEventListener("click", function() {
+            // 删除数据
+            var text = sessionStorage.removeItem("uname0");
+        });
+        deletes.addEventListener("click", function() {
+            // 清除所有数据
+            sessionStorage.clear();
+        });
+    </script>
+</body>
+
+</html>
