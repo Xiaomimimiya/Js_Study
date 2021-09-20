@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div>
+
+    </div>
+    <script>
+        var go_back = document.querySelector(".goback");
+        var nav = document.querySelector("nav");
+        go_back.addEventListener("scroll", function() {
+            // 如果页面滚动到导航栏的的位置 就显示“返回顶部”
+            if (window.pageXOffset > nav.offsetTop) {
+                go_back.style.display = "block";
+            } else {
+                // 隐藏“返回顶部”
+                go_back.style.display = "none";
+            }
+        });
+        // go_back被点击后 则返会顶部 即window.scroll 回到原点
+        go_back.addEventListener("click", function() {
+            window.scroll(0, 0);
+        })
+    </script>
+</body>
+
+</html>
