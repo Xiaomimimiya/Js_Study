@@ -1,4 +1,7 @@
 1、直接在html最顶端添加↓代码
 <mate name="viewport" content="user-scalable=no">
 
-2、利用touch事件进行封装
+=======> 不推荐
+
+
+2、fastclick插件  ===>推荐
