@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+    <script src="fastclick.js"></script>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        if ('addEventListener' in document) {
+            document.addEventListener('DOMContentLoaded', function() {
+                FastClick.attach(document.body);
+            }, false);
+        };
+        // 插件引入后  所有的元素节点就将不再存在延时300ms的问题了
+        var div = document.querySelector("div");
+        div.addEventListener("click", function() {
+            alert("11");
+        })
+    </script>
+</body>
+
+</html>
